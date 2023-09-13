@@ -27,3 +27,7 @@ jobs:
         with:
           api-level: 29
           script: mvn clean test -Pandroid
+      - name: Any Name Bash Test Step
+        shell: bash
+        run: |
+          echo "GH_REPO"
