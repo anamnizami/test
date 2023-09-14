@@ -51,7 +51,7 @@ jobs:
           force-avd-creation: false
           emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: true
-          script: mvn clean test -Dsurefire.useFile=false -Dmaven.test.redirectTestOutputToFile=true > build.log 2>&1
+          script: mvn clean test -Pandroid > build.log
 
 
       - name: Upload Appium logs
