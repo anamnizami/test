@@ -51,10 +51,11 @@ jobs:
           force-avd-creation: false
           emulator-options: -no-snapshot-save -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
           disable-animations: true
-          script: mvn clean test -Pandroid
+          script: mvn clean test -Dsurefire.useFile=false -Dmaven.test.redirectTestOutputToFile=true > build.log 2>&1
+
 
       - name: Upload Appium logs
         uses: actions/upload-artifact@v2
         with:
           name: appium-logs
-          path: index.html
+          path: build.log
